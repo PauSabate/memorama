@@ -17,16 +17,17 @@ server.listen(config.port);
 
 games = {};
 
-myIo(io);
+myIo(io); // Pasamos 'io' al módulo de sockets
 
 console.log(`Server listening on port ${config.port}`);
 
 const Handlebars = handlebars.create({
   extname: '.html', 
-  partialsDir: path.join(__dirname, '..', 'front', 'views', 'partials'), 
+  partialsDir: path.join(__dirname, '..', 'front', 'views', 'partials'),
   defaultLayout: false,
   helpers: {}
 });
+
 app.engine('html', Handlebars.engine);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, '..', 'front', 'views'));
