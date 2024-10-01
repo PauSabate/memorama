@@ -35,3 +35,18 @@ module.exports = io => {
 
     });
 };
+const io = require('socket.io')(server);
+
+io.on('connection', (socket) => {
+    console.log('Jugador conectado');
+
+    socket.on('joinRoom', (roomCode, playerName) => {
+        socket.join(roomCode);
+        console.log(`${playerName} se ha unido a la sala ${roomCode}`);
+        socket.to(roomCode).emit('playerJoined', { playerName });
+    });
+
+    socket.on('ready', (roomCode) => {
+        socket.to(roomCode).emit('opponentReady');
+    });
+});

@@ -1,26 +1,35 @@
-<html>
-    <head>
-        {{> head}}
-    </head>
-    <body>
-        <h2>Game code</h2>
-        <input type="text" id="codeInput">
-        <button id="createGame">Create game</button>
-        <button id="joinGame">Join game</button>
-        <div style="color: red" id="errorMessage"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Chess Bet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bienvenido a Chess Bet</h1>
+    <button id="connectWallet">Conectar Wallet</button>
+    <button id="startSession" disabled>Ir a la sala</button>
 
-        <script>
-            $('#createGame').on('click', function() {
-                window.location.replace('/white?code=' + $('#codeInput').val());
-            });
-            $('#joinGame').on('click', function() {
-                window.location.replace('/black?code=' + $('#codeInput').val());
-            });
-
-            var urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('error') == 'invalidCode') {
-                $('#errorMessage').text('Invalid invite code');
+    <script>
+        document.getElementById('connectWallet').addEventListener('click', async () => {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    alert('Wallet conectada');
+                    document.getElementById('startSession').disabled = false;
+                } catch (error) {
+                    alert('Error al conectar la wallet');
+                }
+            } else {
+                alert('MetaMask no está instalado');
             }
-        </script>
-    </body>
+        });
+
+        document.getElementById('startSession').addEventListener('click', function() {
+            window.location.href = 'rooms.html';
+        });
+    </script>
+</body>
 </html>
