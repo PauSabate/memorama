@@ -108,11 +108,14 @@ const contractABI = [
 }
 ];
 
+let playerAddress;
 // Función para conectar la wallet usando MetaMask
 async function connectWallet() {
     if (typeof window.ethereum !== 'undefined') {
         try {
-            await ethereum.request({ method: 'eth_requestAccounts' });
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            playerAddress = accounts[0];  // Capturar la dirección de la wallet conectada
+            localStorage.setItem('playerAddress', playerAddress);  // Guardar en localStorage
             alert('Wallet conectada correctament');
         } catch (error) {
             console.error('Error al conectar la wallet:', error);
@@ -139,10 +142,10 @@ try {
     await tx.wait(); // Esperar la confirmación de la transacción
 
     alert('Depòsit realitzat correctament. Ara pots començar a jugar.');
-    window.location.href = 'index.html'; // Redirigir al juego
+    window.location.href = 'memory.html'; // Redirigir al juego
 } catch (error) {
     console.error('Error al realitzar el dipòsit:', error);
-    alert('Error al realitzar el dipòsit. Intenta novament.');
+    alert('Error al realitzar el dipòsit. Assegurat de tenir suficient SepoliaETH a la wallet.');
 }
 } else {
 alert('Si us plau, instal·la MetaMask per continuar.');
