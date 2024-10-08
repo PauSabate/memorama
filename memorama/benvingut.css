@@ -20,6 +20,7 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     border: 2px solid #00ff00; /* Borde verde fosforescente */
+    position: relative; /* Para ajustar el contenido dentro del contenedor */
 }
 
 /* Encabezado */
@@ -53,3 +54,8 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Imagen a la izquierda */
+.image-left {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
