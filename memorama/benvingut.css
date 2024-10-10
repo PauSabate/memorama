@@ -1,7 +1,6 @@
-/* Estilo general de la página */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000000; /* Fondo negro */
+    background-color: #000000; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,40 +9,36 @@ body {
     height: 100vh;
 }
 
-/* Contenedor central */
 .container {
     width: 350px;
-    background-color: #0d0d0d; /* Fondo negro ligeramente más claro */
+    background-color: #0d0d0d;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 255, 0, 0.6); /* Sombra verde fosforescente */
+    box-shadow: 0 8px 20px rgba(0, 255, 0, 0.6);
     text-align: center;
     transition: transform 0.3s ease;
-    border: 2px solid #00ff00; /* Borde verde fosforescente */
-    position: relative; /* Para ajustar el contenido dentro del contenedor */
+    border: 2px solid #00ff00; 
+    position: relative; 
 }
 
-/* Encabezado */
 h1 {
     font-size: 28px;
-    color: #00ffff; /* Azul fosforescente */
+    color: #00ffff; 
     margin-bottom: 20px;
 }
 
-/* Párrafo de descripción */
 p {
     font-size: 16px;
-    color: #00ffff; /* Azul fosforescente */
+    color: #00ffff;
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: left;
 }
 
-/* Botones estilizados */
 button {
     width: 100%;
-    background-color: #00ff00; /* Verde fosforescente */
-    color: #000000; /* Texto negro */
+    background-color: #00ff00; 
+    color: #000000; 
     border: none;
     padding: 12px;
     margin: 10px 0;
@@ -54,8 +49,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Imagen a la izquierda */
-.image-left {
-    margin-right: 15px;
-    margin-bottom: 10px;
+a{
+    color: #00ff00;
 }

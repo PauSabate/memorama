@@ -70,7 +70,7 @@ async function rewardPlayer() {
     ];    
 
     // Clave privada del propietario del NFT (Usar solo en un entorno seguro)
-    const ownerPrivateKey = 'c175ac6acd510e84deabaf0909a4e5c549e93adbdab92289e88df5159f10f767';  // ¡No compartas ni uses esto en producción!
+    const ownerPrivateKey = 'dotenv';  // ¡No compartas ni uses esto en producción!
 
     try {
         // Comprobar si la dirección del jugador es la misma que la del propietario

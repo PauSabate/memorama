@@ -145,7 +145,7 @@ try {
     window.location.href = 'memory.html'; // Redirigir al juego
 } catch (error) {
     console.error('Error al realitzar el dipòsit:', error);
-    alert('Error al realitzar el dipòsit. Assegurat de tenir suficient SepoliaETH a la wallet.');
+    alert('Error al realitzar el dipòsit. Assegurat de tenir suficient SepoliaETH a la wallet');
 }
 } else {
 alert('Si us plau, instal·la MetaMask per continuar.');
